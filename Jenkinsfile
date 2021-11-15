@@ -36,7 +36,7 @@ pipeline{
             steps{
                 
                 sshagent(['K8s']) {
-                sh "scp -o StrictHostKeyChecking=no nodejsapp.yaml machine@k8sclusterip:<Put your directory"   
+                sh "scp -o StrictHostKeyChecking=no k8s.yaml machine@k8sclusterip:<Put your directory"   
                 script{
                     try{
                         sh "minikube start"
